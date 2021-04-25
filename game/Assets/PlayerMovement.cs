@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal != 0.0f)
         {
             timeToMove += Mathf.Abs(horizontal) * Time.deltaTime;
-            if (timeToMove >= moveRate)
+            while (timeToMove >= moveRate)
             {
                 if (horizontal > 0.0f)
                 {
