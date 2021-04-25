@@ -40,6 +40,7 @@ public class PlayerDeath : MonoBehaviour
 
     public void Die()
     {
+        FindObjectOfType<ContractData>().failed = true;
         GameObject.Instantiate(deathVFX, transform.position, transform.rotation);
         OnDeath.Invoke();
         lantern.transform.parent = transform.parent;

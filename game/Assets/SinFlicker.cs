@@ -7,10 +7,12 @@ public class SinFlicker : MonoBehaviour
 {
     public Light2D flickerTarget;
     public float intensity;
+
+    public float intensityMultiplier = 1.0f;
     public float flickerAmp;
     public float flickerFreq;
     void Update()
     {
-        flickerTarget.intensity = intensity + Mathf.Sin(Time.timeSinceLevelLoad * flickerFreq) * flickerAmp;
+        flickerTarget.intensity = intensityMultiplier * (intensity + Mathf.Sin(Time.timeSinceLevelLoad * flickerFreq) * flickerAmp);
     }
 }

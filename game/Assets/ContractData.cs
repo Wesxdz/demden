@@ -10,16 +10,15 @@ public class ContractData : MonoBehaviour
 
     public int runsCompleted = 0;
 
-    public int walkingLevel = 0;
-
-    public int miningLevel = 0;
-
-    public int lanternLevel = 0;
-    public int merchantLevel = 0;
+    public Dictionary<PlayerSkill, int> levels = new Dictionary<PlayerSkill, int>();
     public bool completed = false;
     public bool failed = false;
     void Start()
     {
+        levels[PlayerSkill.MoveRate] = 1;
+        levels[PlayerSkill.MineSpeed] = 1;
+        levels[PlayerSkill.Lantern] = 1;
+        levels[PlayerSkill.Negotiation] = 1;
         DontDestroyOnLoad(this);
     }
 

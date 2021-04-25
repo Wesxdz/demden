@@ -56,7 +56,7 @@ public class Contract : MonoBehaviour
         else
         {
             objective.quantity = 2 + (int)(data.runsCompleted * 0.25f) + Random.Range(0, (int)(data.runsCompleted/2.0f));
-            terms.reward = objective.quantity * 50 * (int)(terms.depth/10.0f);
+            terms.reward = (int)((objective.quantity * (50 + Random.Range(-10.0f, 10.0f) * (int)(terms.depth/10.0f)) * (data.levels[PlayerSkill.Negotiation] * 0.1f + Random.Range(0.8f, 1.3f))));
         }
         terms.objectives.Add(objective);
         return terms;
