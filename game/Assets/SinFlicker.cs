@@ -11,8 +11,11 @@ public class SinFlicker : MonoBehaviour
     public float intensityMultiplier = 1.0f;
     public float flickerAmp;
     public float flickerFreq;
+
+    public float progress;
     void Update()
     {
-        flickerTarget.intensity = intensityMultiplier * (intensity + Mathf.Sin(Time.timeSinceLevelLoad * flickerFreq) * flickerAmp);
+        progress += Time.deltaTime * flickerFreq;
+        flickerTarget.intensity = intensityMultiplier * (intensity + Mathf.Sin(progress) * flickerAmp);
     }
 }

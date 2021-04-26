@@ -9,11 +9,20 @@ public class Lantern : MonoBehaviour
     public float life;
 
     public SinFlicker flicker;
+
+    private void Start() 
+    {
+        life = 50.0f + FindObjectOfType<ContractData>().terms.depth * 2;
+    }
     void Update()
     {
         if (life < 10.0f)
         {
             flicker.intensityMultiplier = life/10.0f;
+            flicker.flickerFreq = 2 + (10 - life);
+        } else
+        {
+            flicker.intensityMultiplier = 1.0f;
         }
         life -= Time.deltaTime;
         life = Mathf.Max(0.0f, life);

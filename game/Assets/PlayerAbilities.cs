@@ -22,6 +22,6 @@ public class PlayerAbilities : MonoBehaviour
     {
         animator.SetFloat("MineSpeed", 1.0f + contract.levels[PlayerSkill.MineSpeed] * 0.2f);
         movement.moveRate = 1/(15.0f + contract.levels[PlayerSkill.MoveRate] * 3);
-        latern.intensity = 0.03f + contract.levels[PlayerSkill.Lantern] * 0.01f;
+        latern.intensity = 0.5f + contract.levels[PlayerSkill.Lantern] * 0.1f;
     }
 }
